@@ -1,5 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+const Publisher_1 = require("./observer/Publisher");
+const Subscriber_1 = require("./observer/Subscriber");
 //Factory Pattern
 // let f = new Factory();
 // let emp = [];
@@ -32,4 +34,12 @@ console.log(processManager2.getProcess());
 // startegy.pay();
 // startegy.setMode(cash);
 // startegy.pay();
+//==================================================
+//Observer Pattern
+let p = new Publisher_1.Publisher();
+let s1 = new Subscriber_1.Subscriber('Sub1');
+let s2 = new Subscriber_1.Subscriber('Sub2');
+p.addSubscriber(s1);
+p.addSubscriber(s2);
+p.setMessage('New News');
 //# sourceMappingURL=index.js.map

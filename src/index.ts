@@ -1,4 +1,6 @@
 import { Factory } from "./factory";
+import { Publisher } from "./observer/Publisher";
+import { Subscriber } from "./observer/Subscriber";
 import { Process } from "./singleton/process";
 import ProcessManager from "./singleton/processManager";
 import Strategy from "./strategy";
@@ -46,3 +48,17 @@ console.log(processManager2.getProcess());
 // startegy.pay();
 // startegy.setMode(cash);
 // startegy.pay();
+
+//==================================================
+
+//Observer Pattern
+
+let p = new Publisher();
+
+let s1 = new Subscriber('Sub1')
+let s2 = new Subscriber('Sub2')
+
+p.addSubscriber(s1);
+p.addSubscriber(s2);
+
+p.setMessage('New News')
